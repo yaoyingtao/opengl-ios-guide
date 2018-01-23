@@ -18,6 +18,8 @@
 		ECC1D86A2015F1C4006D16CA /* AGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1D8692015F1C4006D16CA /* AGLView.m */; };
 		ECC1D86D2015F2D0006D16CA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC1D86C2015F2D0006D16CA /* OpenGLES.framework */; };
 		ECC1D86F2015F2D7006D16CA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC1D86E2015F2D7006D16CA /* QuartzCore.framework */; };
+		ECC1D8722016D27D006D16CA /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = ECC1D8702016D27D006D16CA /* SimpleFragment.glsl */; };
+		ECC1D8732016D27D006D16CA /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = ECC1D8712016D27D006D16CA /* SimpleVertex.glsl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		ECC1D8692015F1C4006D16CA /* AGLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLView.m; sourceTree = "<group>"; };
 		ECC1D86C2015F2D0006D16CA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		ECC1D86E2015F2D7006D16CA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ECC1D8702016D27D006D16CA /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragment.glsl; sourceTree = "<group>"; };
+		ECC1D8712016D27D006D16CA /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertex.glsl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				ECC1D8452015F189006D16CA /* main.m */,
 				ECC1D8682015F1C4006D16CA /* AGLView.h */,
 				ECC1D8692015F1C4006D16CA /* AGLView.m */,
+				ECC1D8702016D27D006D16CA /* SimpleFragment.glsl */,
+				ECC1D8712016D27D006D16CA /* SimpleVertex.glsl */,
 			);
 			path = MY_Ch02;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC1D8432015F189006D16CA /* LaunchScreen.storyboard in Resources */,
+				ECC1D8722016D27D006D16CA /* SimpleFragment.glsl in Resources */,
+				ECC1D8732016D27D006D16CA /* SimpleVertex.glsl in Resources */,
 				ECC1D8402015F189006D16CA /* Assets.xcassets in Resources */,
 				ECC1D83E2015F189006D16CA /* Main.storyboard in Resources */,
 			);

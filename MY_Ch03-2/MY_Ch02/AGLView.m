@@ -11,6 +11,7 @@
 #import <OpenGLES/ES2/glext.h>
 #import <GLKit/GLKit.h>
 
+#define Size 3.0f
 
 typedef struct {
     float Position[3];
@@ -22,9 +23,9 @@ typedef struct {
 static const SceneVertex vertices[] =
 {
     {{-0.5f, -0.5f, 0.0f}, {0.0f, 0.0f}}, // lower left corner
-    {{ 0.5f, -0.5f, 0.0f}, {1.0f, 0.0f}}, // lower right corner
-    {{-0.5f,  0.5f, 0.0f}, {0.0f, 1.0f}}, // upper left corner
-    {{0.5f,  0.5f, 0.0f}, {1.0f, 1.0f}}, // upper left corner
+    {{ 0.5f, -0.5f, 0.0f}, {Size, 0.0f}}, // lower right corner
+    {{-0.5f,  0.5f, 0.0f}, {0.0f, Size}}, // upper left corner
+    {{0.5f,  0.5f, 0.0f}, {Size, Size}}, // upper left corner
 };
 
 const GLubyte indices[] = {
@@ -70,7 +71,7 @@ const GLubyte indices[] = {
     [self setupFrameBuffer];
     [self compileShaders];
     [self setupVBO];
-    _leafTexture = [self setupTexture:@"leaves.gif"];
+    _leafTexture = [self setupTexture:@"grid.png"];
 //    [self setupDisplayLink];
     [self render:nil];
 }
@@ -229,7 +230,17 @@ const GLubyte indices[] = {
     glBindTexture(GL_TEXTURE_2D, texName);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, spirteData);
     
     free(spirteData);

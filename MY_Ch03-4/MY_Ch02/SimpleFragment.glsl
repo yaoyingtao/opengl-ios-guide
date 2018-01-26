@@ -6,5 +6,7 @@ uniform sampler2D InsectTexture;
 
 
 void main(void) {
-    gl_FragColor = mix(texture2D(Texture, TexCoordOut), texture2D(InsectTexture, TexCoordOut), 0.5);
+    lowp vec4 insect = texture2D(InsectTexture, TexCoordOut);
+    lowp vec4 leaf = texture2D(Texture, TexCoordOut);
+    gl_FragColor = mix(leaf, insect, insect.a);
 }
